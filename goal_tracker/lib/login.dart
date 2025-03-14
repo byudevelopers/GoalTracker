@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goal_tracker/home.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -58,8 +59,10 @@ class _LoginState extends State<Login> {
             SizedBox(height: 16),
             OutlinedButton(
               onPressed: () {
-                // Implement register logic here
-                print('Register pressed');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Home()),
+                );
               },
               child: Text('Register'),
               style: OutlinedButton.styleFrom(
