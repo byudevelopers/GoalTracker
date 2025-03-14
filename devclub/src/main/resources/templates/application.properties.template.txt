@@ -1,0 +1,13 @@
+spring.application.name=devclub
+spring.datasource.url=SPRING_DATA_URL
+spring.datasource.username=USERNAME
+spring.datasource.password=PASSWORD
+spring.main.banner-mode=off
+logging.level.root=warn
+
+# Include error messages in the response
+server.error.include-message=always
+server.error.include-binding-errors=always
+
+# Include the cause of the error (optional)
+server.error.include-stacktrace=never
