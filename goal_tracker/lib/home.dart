@@ -1,13 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:goal_tracker/goalCard.dart';
+
 
 class Home extends StatefulWidget {
   const Home({super.key});
-
+  
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
+  final List<Map<String, dynamic>> items = [
+  {'title': 'Card 1', 'content': 'Content for Card 1'},
+  {'title': 'Card 2', 'content': 'Content for Card 2'},
+  {'title': 'Card 3', 'content': 'Content for Card 3'},
+  {'title': 'Card 3', 'content': 'Content for Card 3'},
+  {'title': 'Card 3', 'content': 'Content for Card 3'},
+  {'title': 'Card 3', 'content': 'Content for Card 3'},
+  {'title': 'Card 3', 'content': 'Content for Card 3'},
+  {'title': 'Card 3', 'content': 'Content for Card 3'},
+  {'title': 'Card 3', 'content': 'Content for Card 3'},
+  {'title': 'Card 3', 'content': 'Content for Card 3'},
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,6 +108,21 @@ class _HomeState extends State<Home> {
                 onPressed: () {},
               ),
               SizedBox(height: 20),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: items.length,
+                  itemBuilder: (context, index) {
+                    return GoalCard(
+                      title: items[index]['title'],
+                      child: Text(items[index]['content']),
+                      onTap: () {
+                        // Handle card tap
+                        print('Tapped on ${items[index]['title']}');
+                      },
+                    );
+                  },
+                ),
+              )
             ],
           ),
         ),
