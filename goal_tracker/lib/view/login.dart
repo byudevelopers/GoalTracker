@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:goal_tracker/home.dart';
+import 'package:goal_tracker/view/home.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});

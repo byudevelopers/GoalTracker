@@ -1,32 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:goal_tracker/goalCard.dart';
-
+import 'package:goal_tracker/view/goalCard.dart';
+import 'package:goal_tracker/view/viewCard.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
-  
+
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
   final List<Map<String, dynamic>> items = [
-  {'title': 'Card 1', 'content': 'Content for Card 1'},
-  {'title': 'Card 2', 'content': 'Content for Card 2'},
-  {'title': 'Card 3', 'content': 'Content for Card 3'},
-  {'title': 'Card 3', 'content': 'Content for Card 3'},
-  {'title': 'Card 3', 'content': 'Content for Card 3'},
-  {'title': 'Card 3', 'content': 'Content for Card 3'},
-  {'title': 'Card 3', 'content': 'Content for Card 3'},
-  {'title': 'Card 3', 'content': 'Content for Card 3'},
-  {'title': 'Card 3', 'content': 'Content for Card 3'},
-  {'title': 'Card 3', 'content': 'Content for Card 3'},
+    {'title': 'Card 1', 'content': 'Content for Card 1'},
+    {'title': 'Card 2', 'content': 'Content for Card 2'},
+    {'title': 'Card 3', 'content': 'Content for Card 3'},
+    {'title': 'Card 3', 'content': 'Content for Card 3'},
+    {'title': 'Card 3', 'content': 'Content for Card 3'},
+    {'title': 'Card 3', 'content': 'Content for Card 3'},
+    {'title': 'Card 3', 'content': 'Content for Card 3'},
+    {'title': 'Card 3', 'content': 'Content for Card 3'},
+    {'title': 'Card 3', 'content': 'Content for Card 3'},
+    {'title': 'Card 3', 'content': 'Content for Card 3'},
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Home',
           style: TextStyle(
             color: Colors.white,
@@ -117,6 +117,10 @@ class _HomeState extends State<Home> {
                       child: Text(items[index]['content']),
                       onTap: () {
                         // Handle card tap
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ViewCard()),
+                        );
                         print('Tapped on ${items[index]['title']}');
                       },
                     );
