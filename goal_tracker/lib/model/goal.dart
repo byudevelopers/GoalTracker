@@ -1,30 +1,29 @@
-class User {
-  final int userId;
+import "user.dart";
+
+class Goal {
   final String name;
-  final String address;
+  final String description;
+  final DateTime dueDate;
+  final bool completionStatus;
+  final User user;
 
   // Constructor
-  const User({
-    required this.userId,
+  const Goal({
     required this.name,
-    required this.address,
+    required this.description,
+    required this.completionStatus,
+    required this.dueDate,
+    required this.user
   });
 
-  // Deserialize JSON to User object
-  factory User.fromJson(Map<String, dynamic> json) {
-    return User(
-      userId: json['userId'],
+  // Deserialize JSON to Goal object
+  factory Goal.fromJson(Map<String, dynamic> json) {
+    return Goal(
       name: json['name'],
-      address: json['address'],
+      description: json['description'],
+      completionStatus: json['completionStatus'],
+      dueDate: json['dueDate'],
+      user: json['user']
     );
-  }
-
-  // Serialize User object to JSON
-  Map<String, dynamic> toJson() {
-    return {
-      'userId': userId,
-      'name': name,
-      'address': address,
-    };
   }
 }
