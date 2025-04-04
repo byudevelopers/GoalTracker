@@ -26,4 +26,14 @@ class Goal {
       user: json['user']
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'description': description,
+      'completionStatus': completionStatus,
+      'dueDate': dueDate,
+      'user': user
+    };
+  }
 }
