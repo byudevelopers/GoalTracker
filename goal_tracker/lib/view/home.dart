@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:goal_tracker/goalCard.dart';
-import 'package:goal_tracker/viewCard.dart';
+import 'package:goal_tracker/view/goalCard.dart';
+import 'package:goal_tracker/view/viewCard.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
